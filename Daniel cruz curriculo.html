@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Cruz - Curriculo</title>
+    <style>
+        @page {
+            margin: 15mm;
+            size: A4;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #2d3748;
+            background: linear-gradient(135deg, #a7a7a7 0%, #757575 100%);
+            font-size: 11pt;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 32pt;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header h2 {
+            font-size: 16pt;
+            font-weight: 300;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            font-size: 10pt;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .icon {
+            width: 16px;
+            height: 16px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8pt;
+        }
+        
+        .main-content {
+            padding: 25px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 16pt;
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(45deg, #667eea, #3f4dc4);
+            border-radius: 2px;
+        }
+        
+        .profile-box {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #a7a7a7;
+            text-align: justify;
+            font-size: 11pt;
+            line-height: 1.6;
+        }
+        
+        .experience-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .experience-item {
+            position: relative;
+            margin-bottom: 25px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 3px solid #a7a7a7;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .job-title {
+            font-size: 13pt;
+            font-weight: 600;
+            color: #1a365d;
+        }
+        
+        .company {
+            font-weight: 600;
+            color: #5a5a5a;
+            font-size: 11pt;
+        }
+        
+        .duration {
+            background: linear-gradient(45deg, #667eea, #3f4dc4);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 9pt;
+            font-weight: 500;
+        }
+        
+        .description {
+            color: #4a5568;
+            font-size: 10pt;
+            line-height: 1.5;
+        }
+        
+        .description ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .description li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 3px;
+        }
+        
+        .description li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #3a3a3a;
+            font-size: 8pt;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 15px;
+            border-radius: 10px;
+            border-top: 3px solid #6e6e6e;
+        }
+        
+        .skill-category h4 {
+            font-size: 12pt;
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .skill-category h4::before {
+            content: '⚡';
+            font-size: 14pt;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(45deg, #667eea, #3f4dc4);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 9pt;
+            font-weight: 500;
+        }
+        
+        .education-item {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #6e6e6e;
+            margin-bottom: 10px;
+        }
+        
+        .degree {
+            font-size: 12pt;
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 3px;
+        }
+        
+        .institution {
+            color: #646464;
+            font-weight: 500;
+            font-size: 10pt;
+        }
+        
+        .languages-box {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .language-item {
+            background: linear-gradient(45deg, #667eea, #2b348a);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 10pt;
+        }
+        
+        @media print {
+            body { 
+                background: white;
+                font-size: 10pt;
+            }
+            .container {
+                box-shadow: none;
+            }
+            .header::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+    <div class="container">
+        <div class="header">
+            <h1>DANIEL CRUZ</h1>
+            <h2>Analista de Dados | Analista de sistemas / Auxiliar TI</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="icon">📍</div>
+                    <span>Goiânia, GO</span>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📱</div>
+                    <span>(62) 98118-2111</span>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <span>dancruzz@hotmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">💼</div>
+                    <span>linkedin.com/in/danielpelles</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="section">
+                <h3 class="section-title">Perfil Profissional</h3>
+                <div class="profile-box">
+                    <p><strong>Desenvolvedor de Sistemas</strong> especializado em <strong>Análise de Dados</strong> e <strong>Business Intelligence</strong>. Combino sólida formação técnica com experiência prática em infraestrutura de TI para transformar dados em insights estratégicos. Proficiente em <strong>Power BI, Python, MySQL</strong> e ferramentas de visualização de dados. Busco posição como <strong>Analista de Dados Jr.</strong> Conhecimentos em análise de dados, machine learning e desenvolvimento de dashboards interativos que apoiem decisões de negócio.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">Experiência Profissional</h3>
+                <div class="experience-timeline">
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Parceiro de Mobilidade</div>
+                                <div class="company">Uber</div>
+                            </div>
+                            <div class="duration">Jan 2019 - Atual</div>
+                        </div>
+                        <div class="description">
+                            <ul>
+                                <li>Motorista de aplicativo</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Empreendedor & Analista de Negócios</div>
+                                <div class="company">Múltiplos Empreendimentos</div>
+                            </div>
+                            <div class="duration">2017 - 2019</div>
+                        </div>
+                        <div class="description">
+                            <ul>
+                                <li>Fundação e gestão de pequenos negócios</li>
+                                <li>Desenvolvimento de modelos de negócio baseados em análise de dados e business intelligence</li>
+                                <li>Implementação de sistemas de controle financeiro e dashboards para acompanhamento</li>
+                                <li>Análise de viabilidade econômica e desenvolvimento de estratégias de crescimento escalável</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Consultor Técnico em Vendas</div>
+                                <div class="company">TIM Brasil</div>
+                            </div>
+                            <div class="duration">Jan 2014 - Jun 2017</div>
+                        </div>
+                        <div class="description">
+                            <ul>
+                                <li>Vendas e atendimento ao cliente</li>                                <li>Implementação de estratégias orientadas por dados para otimização de resultados comerciais</li>
+                                <li>Treinamento técnico de equipes em novas tecnologias e ferramentas digitais</li>
+                                <li>Gestão de relacionamento com clientes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Especialista em Infraestrutura de TI</div>
+                                <div class="company">Realiza Construtora</div>
+                            </div>
+                            <div class="duration">Mai 2010 - Mar 2012</div>
+                        </div>
+                        <div class="description">
+                            <ul>
+                                <li>Implementação e manutenção de infraestrutura de TI completa (hardware, redes, sistemas)</li>
+                                <li>Desenvolvimento de soluções automatizadas para otimização de processos operacionais</li>
+                                <li>Análise de performance de sistemas e elaboração de relatórios técnicos detalhados</li>
+                                <li>Suporte técnico avançado e solução de problemas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">Competências Técnicas</h3>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h4>Análise de Dados & BI</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Power Query</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">MySQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Desenvolvimento</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Git/GitHub</span>
+                            <span class="skill-tag">APIs</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Infraestrutura & Sistemas</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Hardware / Manutenção</span>
+                            <span class="skill-tag">Redes</span>
+                            <span class="skill-tag">Solução de Problemas</span>
+                            <span class="skill-tag">Administração de Sistemas</span>
+                            <span class="skill-tag">Suporte de TI</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Negócios & Liderança</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Empreendedorismo</span>
+                            <span class="skill-tag">Análise de Negócios</span>
+                            <span class="skill-tag">Planejamento Estratégico</span>
+                            <span class="skill-tag">Liderança de Equipes</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Machine Learning & Analytics</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Mineração de Dados</span>
+                            <span class="skill-tag">Análise Estatística</span>
+                            <span class="skill-tag">Modelos Preditivos</span>
+                            <span class="skill-tag">Métricas de Performance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">Formação & Certificações</h3>
+                <div class="education-item">
+                    <div class="degree">Tecnólogo em Análise e Desenvolvimento de Sistemas</div>
+                    <div class="institution">Faculdade Anhanguera | Concluído: Junho 2024</div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="degree">Certificações Complementares</div>
+                    <div class="institution">
+                        • Power BI Profissional - Data Science Academy<br>
+                        • Fundamentos de Machine Learning<br>
+                        • Análise de Dados<br>
+                        • Business Intelligence & Visualização de Dados
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">Idiomas</h3>
+                <div class="languages-box">
+                    <div class="language-item">🇧🇷 Português - Nativo</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
